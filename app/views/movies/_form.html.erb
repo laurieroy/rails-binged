@@ -33,7 +33,7 @@
 
   <div class="field">
     <%= form.label :status %>
-    <%= form.number_field :status %>
+    <%= form.select :status, Movie.statuses.keys.map { |s| [s.humanize, s] } %>
   </div>
 
   <div class="field">
