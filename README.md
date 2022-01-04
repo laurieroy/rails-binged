@@ -1,24 +1,15 @@
-# README
+# Binged
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A movie tracking list using enums of watched, watching, and to watch.
 
-Things you may want to cover:
 
-* Ruby version
+Through commit 518b434f8cc5f is following a [tutorial](https://vishnuch.tech/binged-your-movie-watch-tracker-built-using-ruby-on-rails).
 
-* System dependencies
+TODO:
+* Add in testing
+* Add in recommended by
+* Add in plot summary
+* Add in genre
+* Add in validation
+* Add view helpers
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
