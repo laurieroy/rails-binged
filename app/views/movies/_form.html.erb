@@ -1,4 +1,4 @@
-<%= form_with(model: movie) do |form| %>
+<%= form_with(model: movie, local: true) do |form| %>
   <% if movie.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(movie.errors.count, "error") %> prohibited this movie from being saved:</h2>
@@ -13,40 +13,40 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :image_url %>
-    <%= form.text_field :image_url %>
+    <%= form.text_field :image_url, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :trailer_url %>
-    <%= form.text_field :trailer_url %>
+    <%= form.text_field :trailer_url, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :movie_url %>
-    <%= form.text_field :movie_url %>
+    <%= form.text_field :movie_url, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :status %>
-    <%= form.select :status, Movie.statuses.keys.map { |s| [s.humanize, s] } %>
+    <%= form.select :status, Movie.statuses.keys.map { |s| [s.humanize, s] }, class: "form-select" %>
   </div>
 
   <div class="field">
     <%= form.label :release_date %>
-    <%= form.datetime_select :release_date %>
+    <%= form.datetime_select :release_date, class: "form-control" %>
   </div>
 
   <div class="field">
     <%= form.label :watched_date %>
-    <%= form.datetime_select :watched_date %>
+    <%= form.datetime_select :watched_date, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit 'Submit', class: "btn btn-primary theme-color" %>
   </div>
 <% end %>
