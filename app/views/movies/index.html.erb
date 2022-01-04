@@ -1,39 +1,20 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Movies</h1>
+<% if Movies.yet_to_watch.length > 0 %>
+  <%= render 'movies/card_section_title', section: "Your Movies Watchlist" %>
+  <%= render 'movies/movie_cards', movies: Movie.yet_to_watch %> 
+<% end %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Image url</th>
-      <th>Trailer url</th>
-      <th>Movie url</th>
-      <th>Status</th>
-      <th>Release date</th>
-      <th>Watched date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<% if Movie.watching.length > 0 %>
+  <%= render 'movies/card_section_title', section: "Movies That are in Progress" %>
+  <%= render 'movies/movie_cards', movies: Movie.watching %> 
+<% end %>
 
-  <tbody>
-    <% @movies.each do |movie| %>
-      <tr>
-        <td><%= movie.title %></td>
-        <td><%= movie.image_url %></td>
-        <td><%= movie.trailer_url %></td>
-        <td><%= movie.movie_url %></td>
-        <td><%= movie.status %></td>
-        <td><%= movie.release_date %></td>
-        <td><%= movie.watched_date %></td>
-        <td><%= link_to 'Show', movie %></td>
-        <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
-        <td><%= link_to 'Destroy', movie, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<% if Movie.watched.length > 0 %>
+  <%= render 'movies/card_section_title', section: "Movies You Already Watched" %>
+  <%= render 'movies/movie_cards', movies: Movie.watched %> 
+<% end %>
 
 <br>
 
-<%= link_to 'New Movie', new_movie_path %>
+<%= link_to 'New Movie', new_movie_path, class: "btn theme-btn" %>
