@@ -5,16 +5,16 @@
 		</div>
 		<div class="card-body">
 			<h5 class="card-title">
-				<a href="<%= movie.mov ie_url%>" style="color: #800080;"><%= movie.title %>< /a>
+				<a href="<%= movie.movie_url%>" style="color: #800080;"><%= movie.title %></a>
 			</h5>
 		</div>
 		<ul class="list-group list-group-flush">
 			<li class="list-group-item">
-				<strong>Release Date : </strong>
+				<strong>Release Date: </strong>
 				<%= movie.release_date.strftime('%d-%b-%Y') %>
 			</li>
 			<% if movie.watched? %>
-				<li class="list-group-item"><strong>Watch ed On : </strong><%= movie.watched_date.strftime('%d- %b-%Y') %></li>
+				<li class="list-group-item"><strong>Watched On: </strong><%= movie.watched_date.strftime('%d- %b-%Y') %></li>
 			<% end %> 
 		</ul>
 		<div class="card-body">
